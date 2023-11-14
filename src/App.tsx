@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
-import { PageWelcome } from "./pages/PageWelcome.tsx";
-import { PageInfo } from "./pages/PageInfo.tsx";
 import { PageAbout } from "./pages/PageAbout.tsx";
+import { PageInlineStyles } from "./pages/PageInlineStyles.tsx";
+import { PageStyledComponents } from "./pages/PageStyledComponents.tsx";
 
 function App() {
 	return (
@@ -10,10 +10,10 @@ function App() {
 			<Header />
 			<main className="py-4">
 				<Routes>
-					<Route path="/welcome" element={<PageWelcome />} />
-					<Route path="/info" element={<PageInfo />} />
+					<Route path="/inline-styles" element={<PageInlineStyles />} />
+					<Route path="/styled-components" element={<PageStyledComponents />} />
 					<Route path="/about" element={<PageAbout />} />
-					<Route index element={<Navigate to="/welcome" replace />}/>	
+					<Route index element={<Navigate to="/inline-styles" replace />}/>	
 				</Routes>
 			</main>
 		</>
