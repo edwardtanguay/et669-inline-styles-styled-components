@@ -1,5 +1,10 @@
+import { StyledOnlineToggle } from "../components/StyledOnlineToggle";
+import { Wrapper } from "../components/Wrapper";
+
 export const PageStyledComponents = () => {
 	return (
-		<p>This is the styled-components page.</p>
-	)
-}
+		<Wrapper title="Color Example">
+			<StyledOnlineToggle />
+		</Wrapper>
+	);
+};
