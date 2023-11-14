@@ -1,5 +1,10 @@
+import { InlineOnlineToggle } from "../components/InlineOnlineToggle";
+import { Wrapper } from "../components/Wrapper";
+
 export const PageInlineStyles = () => {
 	return (
-		<p>This is the inline styles page.</p>
-	)
-}
+		<Wrapper title="Toggle Button">
+			<InlineOnlineToggle />
+		</Wrapper>
+	);
+};
