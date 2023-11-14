@@ -2,33 +2,39 @@ import { useState } from "react";
 import styled from "styled-components";
 
 interface StyledTextProps {
-	isColored: boolean;
+	isOnline: boolean;
 }
 
 export const StyledOnlineToggle = () => {
-	const [isColored, setIsColored] = useState(false);
+	const [isOnline, setIsOnline] = useState(false);
 
-	const ToggleColorButton = styled.button`
-		background-color: lightblue;
-		padding: 10px;
-		margin-top: 10px;
+	const ToggleOnlineButton = styled.button`
+		background-color: #64748b;
+		padding-right: 0.7rem;
+		padding-left: 0.7rem;
+		padding-top: 0.3rem;
+		padding-bottom: 0.5rem;
+		border-radius: 0.2rem;
 		cursor: pointer;
 	`;
 
-	const StyledText = styled.p<StyledTextProps>`
-		color: ${(props) => (props.isColored ? "green" : "black")};
+	const OnlineText = styled.p<StyledTextProps>`
+		color: ${(props) => (props.isOnline ? "darkgreen" : "darkred")};
 	`;
+
+	const UserText = styled.p<StyledTextProps>`
+		font-weight: ${(props) => (props.isOnline ? "bold" : "normal")};
+	`;
+
 	return (
 		<>
-			<div>
-				<h2>Toggle Text Color Example</h2>
-				<ToggleColorButton onClick={() => setIsColored(!isColored)}>
-					Toggle Color
-				</ToggleColorButton>
-				<StyledText isColored={isColored}>
-					This text changes color!
-				</StyledText>
-			</div>
+			<ToggleOnlineButton onClick={() => setIsOnline(!isOnline)}>
+				Toggle
+			</ToggleOnlineButton>
+			<OnlineText isOnline={isOnline}>
+				User is now {isOnline ? "online" : "offline"}.
+			</OnlineText>
+			<UserText isOnline={isOnline}>Hans Schmidt</UserText>
 		</>
 	);
 };

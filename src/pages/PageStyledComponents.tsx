@@ -3,7 +3,7 @@ import { Wrapper } from "../components/Wrapper";
 
 export const PageStyledComponents = () => {
 	return (
-		<Wrapper title="Color Example">
+		<Wrapper title="Toggle Button">
 			<StyledOnlineToggle />
 		</Wrapper>
 	);
